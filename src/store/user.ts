@@ -30,5 +30,13 @@ export const useUserStore = defineStore({
         ]
     }),
     actions: {
+        async getPeople(id: string) {
+            await userApiService.getPeople()
+            .then((response: TypedResponse<Person[]>) => {
+                if(response.status === 200) {
+                    this.$state.people = response.data;
+                }
+            })
+        }
     }
 })
