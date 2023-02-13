@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const headersAppJSON = { "Content-Type": "application/json" };
 
-const baseApiUrl = process.env.VUE_APP_BACKEND_API;
+const baseApiUrl = process.env.VUE_APP_API_BASE;
 
 const _axiosInstance = axios.create({
   baseURL: baseApiUrl,

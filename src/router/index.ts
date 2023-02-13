@@ -6,8 +6,17 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'WorkerList',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/WorkersList.vue')
+    name: 'TaskList',
+    component: () => import(/* webpackChunkName: "list" */ '@/views/TaskList.vue')
+  },
+  {
+    path: '/TaskItem/:id',
+    name: 'TaskItem',
+    component: () => import(/* webpackChunkName: "item" */ '@/views/TaskItem.vue')
+  },
+  {
+    path: '**',
+    component: () => import(/* webpackChunkName: "notfound" */ '@/views/NotFound.vue')
   }
 ]
 
